@@ -28,5 +28,14 @@ include_directories( ${includeDirs} )
 include_directories( ${catkin_INCLUDE_DIRS} )
 include_directories( ${Eigen_INCLUDE_DIRS} )
 
+# For 'cvplot'
+set(CVPLOT_INCLUDE_DIR /home/larrkchlaptop/Downloads/cv-plot-1.2.2/CvPlot/inc)
+set(CVPLOT_SRC /home/larrkchlaptop/Downloads/cv-plot-1.2.2/CvPlot/src/cvplot.cpp)
+include_directories(${CVPLOT_INCLUDE_DIR}) 
+
+
 add_executable(eskf_node src/main.cpp)
 target_link_libraries(eskf_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${Eigen_LIBRARIES})
+
+add_executable(txtdraw_node src/main_txtdraw.cpp ${CVPLOT_SRC})
+target_link_libraries(txtdraw_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${Eigen_LIBRARIES})

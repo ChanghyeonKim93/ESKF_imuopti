@@ -1,0 +1,6 @@
+<launch>
+    <arg name="directory" default="$(env HOME)/exp_20220616/exp1/"/>
+    <node pkg="eskf" name="txtdraw_node" type="txtdraw_node" output="screen">
+        <param name="directory" type="string" value="$(arg directory)"/>
+    </node>
+</launch>
