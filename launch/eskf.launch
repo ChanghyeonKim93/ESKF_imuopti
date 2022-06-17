@@ -1,0 +1,6 @@
+<launch>
+    <arg name="test1"  default="false"/>
+    <node pkg="eskf" name="eskf_node" type="eskf_node" output="screen">
+        <param name="test1" type="bool" value="$(arg test1)"/>
+    </node>
+</launch>
